@@ -1,0 +1,121 @@
+$toolbar-color: #323845;
+
+.md-medium-editor {
+    background-color: azure;
+}
+
+.md-toolbar {
+    background: $toolbar-color;
+    color: #fff;
+    cursor: auto;
+    border-radius: 5px;
+    z-index: 2;
+    // position: absolute;
+    transition: all 0.1s ease;
+    visibility: hidden;
+    box-shadow: 0 1px 3px 0 #747171;
+
+    &--active {
+        visibility: visible;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        margin-left: -5px;
+        border-top: 5px solid $toolbar-color;
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+    }
+}
+
+.md-controls {
+    font-size: 14px;
+    display: inline-block;
+    position: relative;
+
+    &--block {
+        border-right: 1px solid #555;
+    }
+}
+
+.md-style-button {
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    padding: 6px 10px;
+
+    &:hover {
+        color: yellow;
+    }
+
+    &--active {
+        color: #50ff4d;
+        background-color: #242933;
+
+        &:hover {
+            color: #08c;
+        }
+    }
+
+    &--bold {
+        font-weight: bold;
+    }
+    &--italic {
+        font-style: italic;
+    }
+    &--underline {
+        text-decoration: underline;
+    }
+    &--strikethrough {
+        text-decoration: line-through;
+    }
+}
+
+@keyframes pop-upwards {
+    0% {
+        transform: matrix(0.97, 0, 0, 1, 0, 12);
+        opacity: 0;
+    }
+    20% {
+        transform: matrix(0.99, 0, 0, 1, 0, 2);
+        opacity: 0.7;
+    }
+    40% {
+        transform: matrix(1, 0, 0, 1, 0, -1);
+        opacity: 1;
+    }
+    70% {
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes pop-downwards {
+    0% {
+        transform: matrix(0.97, 0, 0, 1, 0, -12);
+        opacity: 0;
+    }
+    20% {
+        transform: matrix(0.99, 0, 0, 1, 0, -2);
+        opacity: 0.7;
+    }
+    40% {
+        transform: matrix(1, 0, 0, 1, 0, 1);
+        opacity: 1;
+    }
+    70% {
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        opacity: 1;
+    }
+}
