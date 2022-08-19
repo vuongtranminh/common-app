@@ -1,0 +1,60 @@
+.top-nav {
+    background-color: var(--main-color);
+    height: 40px;
+    border-radius: $border-radius;
+    @include flex(space-between, center);
+    padding: 0 20px;
+    width: calc(100% - 10px);
+    position: sticky;
+    top: 0;
+    z-index: 99;
+
+    &__time {
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        background-color: var(--main-bg-hightlight);
+        padding: 0 5px;
+        border-radius: 8px;
+        height: 20px;
+
+        i {
+            font-size: 16px;
+        }
+    }
+
+    &__market {
+        display: flex;
+        gap: 25px;
+    }
+
+    &__actions {
+        display: flex;
+        gap: 20px;
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    &__button {
+        height: 30px;
+        width: 30px;
+
+        &--quick {
+            width: 120px;
+        }
+    }
+
+    &__account {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        i {
+            font-size: 30px;
+        }
+    }
+}

@@ -1,0 +1,211 @@
+.order {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 10px;
+
+    &__info {
+        grid-column: 2/6;
+    }
+}
+
+.tab {
+    &__order {
+        padding: 0 10px;
+
+        .stock {
+            background-color: var(--main-bg-hightlight);
+            border-radius: 8px;
+            padding: 5px 15px;
+
+            &__search {
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                &__input {
+                    display: flex;
+                    align-items: center;
+                    width: 105px;
+
+                    i {
+                        font-size: 20px;
+                        margin-right: 5px;
+                    }
+                }
+
+                &__info {
+                    font-size: 16px;
+
+                    span {
+                        padding: 0 5px;
+                    }
+                }
+
+                &__icon {
+                    font-size: 20px;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+
+            &__description {
+                font-size: 14px;
+                line-height: 30px;
+            }
+        }
+
+        .action {
+            margin-top: 20px;
+
+            &__content {
+                margin-top: 20px;
+            }
+
+            &__line {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+                justify-content: space-between;
+
+                &--input {
+                    height: 30px;
+                }
+            }
+
+            &__tabs {
+                display: flex;
+                border-radius: 8px;
+                overflow: hidden;
+                position: relative;
+                height: 40px;
+            }
+
+            &__tab {
+                flex-grow: 1;
+                background-color: var(--main-bg-hightlight);
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+
+                &__info {
+                    display: inline-flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                &__title {
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    font-size: 16px;
+                }
+
+                &--edit {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                    border-radius: 20px;
+                    background-color: var(--main-bg-section);
+                    height: 30px;
+                    width: 100px;
+                    justify-content: center;
+                    border: 1px solid var(--txt-color);
+                }
+
+                &--sell {
+                    display: flex;
+                    justify-content: flex-end;
+                    padding-right: 20px;
+                }
+
+                &--buy {
+                    padding-left: 20px;
+                }
+
+                &--edit {
+                    .action__tab__title {
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            &__label {
+                width: 100px;
+            }
+
+            &__input {
+                &__button {
+                    height: 100%;
+                    width: 80px;
+                }
+            }
+
+            &__button {
+                height: 50px;
+            }
+        }
+
+        .info {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+            background-color: var(--main-bg-hightlight);
+            border-radius: 8px;
+            padding: 10px;
+
+            &__grow {
+                flex-grow: 1;
+            }
+
+            &__line {
+                display: flex;
+
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+            }
+
+            &__title {
+                flex-grow: 1;
+            }
+
+            &__value {
+                font-size: 14px;
+                flex-grow: 1;
+                text-align: right;
+            }
+        }
+
+        .table {
+            margin-top: 10px;
+        }
+    }
+}
+
+.order__table-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 10px;
+
+    .order {
+        &__table {
+            grid-column: 1/4;
+
+            &--sell-available {
+                grid-column: 2/5;
+            }
+        }
+
+        &__info {
+            grid-column: 4/5;
+
+            &--buy-available {
+                grid-column: 1/2;
+            }
+        }
+    }
+}

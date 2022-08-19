@@ -1,0 +1,96 @@
+.lt-select-box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .lt-options-container {
+        background-color: #ffffff;
+        position: absolute;
+        top: 40px;
+        max-height: 0;
+        width: 100%;
+        opacity: 0;
+        transition: all 0.4s;
+        order: 1;
+        contain: content;
+        box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%), 0 8px 10px 1px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%);
+        border-radius: 4px;
+        padding: 8px 0;
+        visibility: hidden;
+
+        &--label {
+            top: 60px;
+        }
+
+        &::-webkit-scrollbar {
+            width: 8px;
+            background: #0d141f;
+            border-radius: 0 8px 8px 0;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #525861;
+            border-radius: 0 8px 8px 0;
+        }
+    }
+
+    .lt-options-container.active {
+        max-height: 300px;
+        opacity: 1;
+        overflow-y: auto;
+        visibility: visible;
+    }
+
+    .lt-option {
+        padding: 8px 16px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &:hover {
+            background-color: #f5f5f5;
+        }
+
+        &.active {
+            background-color: rgba(66, 142, 241, 0.4);
+        }
+
+        &__icon {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+.lt-selected {
+    &__label {
+        font-size: 14px;
+    }
+
+    &__wrapper {
+        border-radius: 8px;
+        margin-top: 5px;
+        margin-bottom: 8px;
+        order: 0;
+        padding: 8px 12px;
+        cursor: pointer;
+        box-shadow: 0 3px 1px -2px rgb(0 0 0 / 20%), 0 2px 2px 0 rgb(0 0 0 / 14%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &--no-border {
+            box-shadow: none;
+        }
+    }
+
+    &__value {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+    }
+}

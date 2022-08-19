@@ -1,0 +1,15 @@
+.input {
+    background-color: var(--main-color);
+    border-radius: 8px;
+    border: 1px solid var(--main-bg-hightlight);
+    height: 30px;
+    width: 150px;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    outline: none;
+    text-align: center;
+    color: var(--txt-color);
+    font-weight: 700;
+    font-size: 14px;
+}

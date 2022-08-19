@@ -1,0 +1,20 @@
+.lt-otp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    input {
+        width: 70px;
+        height: 70px;
+        background-color: var(--main-bg-section);
+        border: none;
+        line-height: 50px;
+        text-align: center;
+        font-size: 48px;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 700;
+        color: white;
+        border-radius: $border-radius;
+    }
+}

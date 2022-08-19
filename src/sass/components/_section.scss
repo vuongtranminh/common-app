@@ -1,0 +1,16 @@
+.section {
+    &__title {
+        background-color: var(--main-bg-hightlight);
+        border-radius: $border-radius;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+    }
+
+    &__body {
+        margin-top: 10px;
+        background-color: var(--main-bg-section);
+        overflow-x: hidden;
+    }
+}

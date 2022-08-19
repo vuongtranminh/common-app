@@ -1,0 +1,52 @@
+.lt-radio-group {
+    label {
+        display: block;
+        cursor: pointer;
+
+        > span {
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+        }
+
+        > span:before {
+            content: '';
+            display: inline-block;
+            vertical-align: -0.25em;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            border: 2px solid var(--txt-color);
+            margin-right: 0.5em;
+        }
+
+        > input:checked + span:before {
+            border-color: var(--txt-color);
+            background-image: radial-gradient(
+                circle closest-side,
+                var(--txt-color) 0%,
+                var(--txt-color) 50%,
+                transparent 50%,
+                transparent 100%
+            );
+        }
+
+        > input:disabled + span {
+            opacity: 0.5;
+        }
+
+        > input:disabled:checked + span:before {
+            background-image: radial-gradient(
+                circle closest-side,
+                rgba(0, 0, 0, 0.5) 0%,
+                rgba(0, 0, 0, 0.5) 50%,
+                transparent 50%,
+                transparent 100%
+            );
+        }
+
+        > input {
+            display: none;
+        }
+    }
+}

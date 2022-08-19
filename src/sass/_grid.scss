@@ -1,0 +1,47 @@
+.grid {
+    display: grid;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5px;
+}
+
+[class*='col-'] {
+    padding: 0 5px;
+}
+
+@each $val in $numbers {
+    .grid-col-#{$val} {
+        grid-template-columns: repeat($val, 1fr);
+    }
+
+    .col-#{$val} {
+        width: ((100% / 12) * $val);
+    }
+}
+
+@each $val in $numbers {
+    @include tablet {
+        .grid-col-md-#{$val} {
+            grid-template-columns: repeat($val, 1fr);
+        }
+
+        .col-md-#{$val} {
+            width: ((100% / 12) * $val);
+        }
+    }
+}
+
+@each $val in $numbers {
+    @include mobile {
+        .grid-col-sm-#{$val} {
+            grid-template-columns: repeat($val, 1fr);
+        }
+
+        .col-sm-#{$val} {
+            width: ((100% / 12) * $val);
+        }
+    }
+}

@@ -1,0 +1,9 @@
+.auth {
+    height: 100vh;
+    background-image: url('../../assets/images/nhsv-login-bg.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    @include flex(center, center);
+    color: var(--txt-color);
+}

@@ -1,0 +1,55 @@
+$border-color: #353a55;
+
+.lt-table-wraper {
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 4px;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+    width: 100%;
+    overflow-x: auto;
+    max-height: 100%;
+}
+
+.lt-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    &--sticky-header {
+        thead {
+            th {
+                position: sticky;
+                top: 0;
+                background-color: var(--main-bg-hightlight-dark);
+            }
+        }
+    }
+
+    &__head {
+        background-color: var(--main-bg-hightlight-dark);
+    }
+
+    &__cell {
+        padding: 6px 16px;
+
+        &--left {
+            text-align: left;
+        }
+
+        &--center {
+            text-align: center;
+        }
+
+        &--right {
+            text-align: right;
+        }
+    }
+}
+
+.lt-table--border .lt-table__cell {
+    border: 1px solid $border-color;
+}
+
+.lt-table--radius {
+    overflow: hidden;
+    border-radius: $border-radius $border-radius 0 0;
+}

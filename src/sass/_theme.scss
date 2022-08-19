@@ -1,0 +1,19 @@
+.theme-mode-light {
+    --main-color: var(--main-color-light);
+    --main-bg: var(--main-bg-light);
+    --main-bg-section: var(--main-bg-section-light);
+    --txt-color: var(--txt-color-light);
+    --txt-title-color: var(--txt-title-color-light);
+    --txt-color-hightlight: var(--txt-color-hightlight-light);
+    --main-bg-hightlight: var(--main-bg-hightlight-light);
+}
+
+.theme-mode-dark {
+    --main-color: var(--main-color-dark);
+    --main-bg: var(--main-bg-dark);
+    --main-bg-section: var(--main-bg-section-dark);
+    --txt-color: var(--txt-color-dark);
+    --txt-title-color: var(--txt-title-color-dark);
+    --txt-color-hightlight: var(--txt-color-hightlight-dark);
+    --main-bg-hightlight: var(--main-bg-hightlight-dark);
+}

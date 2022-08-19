@@ -1,0 +1,136 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+html {
+    font-size: 10px;
+
+    @include mobile {
+        font-size: 11px;
+    }
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+
+    &::-webkit-scrollbar {
+        width: 0 !important;
+        display: none;
+    }
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+a:hover {
+    color: var(--main-color);
+}
+
+img {
+    max-width: 100%;
+}
+
+@each $color, $val in $colors {
+    .color-#{$color} {
+        color: $val !important;
+    }
+
+    .bg-#{$color} {
+        background-color: $val !important;
+    }
+}
+
+.text--head {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.text--bold {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-start {
+    justify-content: flex-start !important;
+}
+
+.justify-end {
+    justify-content: flex-end !important;
+}
+
+.justify-center {
+    justify-content: center !important;
+}
+
+.justify-space-between {
+    justify-content: space-between !important;
+}
+
+.align-start {
+    align-items: flex-start !important;
+}
+
+.align-end {
+    align-items: flex-end !important;
+}
+
+.align-center {
+    align-items: center !important;
+}
+
+.w-half {
+    width: 50% !important;
+}
+
+.w-full {
+    width: 100% !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.flex-grow-1 {
+    flex-grow: 1 !important;
+}
+
+.align-self-start {
+    align-self: start !important;
+}
+
+.align-self-end {
+    align-self: end !important;
+}
+.align-self-center {
+    align-self: center !important;
+}
+
+.mt-10 {
+    margin-top: 10px !important;
+}
+
+.mb-10 {
+    margin-bottom: 10px !important;
+}
