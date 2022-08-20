@@ -1,16 +1,12 @@
 $toolbar-color: #323845;
 
-.md-medium-editor {
-    background-color: azure;
-}
-
 .md-toolbar {
     background: $toolbar-color;
     color: #fff;
     cursor: auto;
     border-radius: 5px;
     z-index: 2;
-    // position: absolute;
+    position: absolute;
     transition: all 0.1s ease;
     visibility: hidden;
     box-shadow: 0 1px 3px 0 #747171;

@@ -6,6 +6,7 @@ export const EditorContext = createContext();
 
 const MediumEditor = () => {
     const editorRef = useRef();
+    const editorRootRef = useRef()
     const [editorState, setEditorState] = useState(() => EditorState.createEmpty());
 
     const handleToggleBlockType = (blockType) => {
@@ -40,17 +41,21 @@ const MediumEditor = () => {
     }
 
     return (
-        <div className="md-medium-editor" onClick={handleFocus}>
-            <EditorContext.Provider value={contextValue}>
-                <Toolbar editorRef={editorRef} />
-            </EditorContext.Provider>
-            <Editor
-                ref={editorRef}
-                editorState={editorState}
-                onChange={handleChange}
-                handleKeyCommand={handleKeyCommand}
-                placeholder="Tell a story..."
-            />
+        <div className="md-medium-editor-wrapper" onClick={handleFocus}>
+            <div className='md-medium-editor-inner'>
+                <EditorContext.Provider value={contextValue}>
+                    <Toolbar editorRootRef={editorRootRef} />
+                </EditorContext.Provider>
+                <div className='md-medium-editor-root' ref={editorRootRef}>
+                    <Editor
+                        ref={editorRef}
+                        editorState={editorState}
+                        onChange={handleChange}
+                        handleKeyCommand={handleKeyCommand}
+                        placeholder="Tell a story..."
+                    />
+                </div>
+            </div>
         </div>
     );
 };

@@ -3,7 +3,7 @@ import MediumEditor from '~/components/medium-editor/MediumEditor';
 
 const Editor = () => {
     return (
-        <div>
+        <div style={{ marginTop: '30px' }}>
             <MediumEditor />
         </div>
     );

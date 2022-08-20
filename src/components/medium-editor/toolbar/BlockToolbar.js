@@ -37,31 +37,31 @@ const BLOCK_BUTTONS = [
         style: 'header-one',
         description: 'Heading 1',
     },
-    {
-        label: 'H2',
-        style: 'header-two',
-        description: 'Heading 2',
-    },
-    {
-        label: 'H3',
-        style: 'header-three',
-        description: 'Heading 3',
-    },
-    {
-        label: 'H4',
-        style: 'header-four',
-        description: 'Heading 4',
-    },
-    {
-        label: 'H5',
-        style: 'header-five',
-        description: 'Heading 5',
-    },
-    {
-        label: 'H6',
-        style: 'header-six',
-        description: 'Heading 6',
-    },
+    // {
+    //     label: 'H2',
+    //     style: 'header-two',
+    //     description: 'Heading 2',
+    // },
+    // {
+    //     label: 'H3',
+    //     style: 'header-three',
+    //     description: 'Heading 3',
+    // },
+    // {
+    //     label: 'H4',
+    //     style: 'header-four',
+    //     description: 'Heading 4',
+    // },
+    // {
+    //     label: 'H5',
+    //     style: 'header-five',
+    //     description: 'Heading 5',
+    // },
+    // {
+    //     label: 'H6',
+    //     style: 'header-six',
+    //     description: 'Heading 6',
+    // },
     {
         label: (
             <svg width="10.83" height="10" viewBox="0 0 13 12">

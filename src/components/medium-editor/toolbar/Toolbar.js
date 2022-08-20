@@ -3,6 +3,7 @@ import BlockToolbar from './BlockToolbar'
 import InlineToolbar from './InlineToolbar'
 import cx from 'classnames';
 import { EditorContext } from '../MediumEditor';
+import { getSelection, getSelectionRect } from '~/utils/mediumEditor';
 
 const Toolbar = (props) => {
 
@@ -16,9 +17,9 @@ const Toolbar = (props) => {
     //     setIsOpen(false)
     // }
 
-    const toolbarRef = useRef(null)
+    const toolbarRef = useRef()
 
-    const mounted = useRef(null);
+    const mounted = useRef();
 
     useEffect(() => {
         if (!mounted.current) {
@@ -39,15 +40,41 @@ const Toolbar = (props) => {
 
             const selectionBoundary = getSelectionRect(nativeSelection);
 
-            // const toolbarBoundary = toolbarRef.current.getBoundingClientRect()
+            console.log('Selection')
+            console.log(selectionBoundary)
+
+            const toolbarNode = toolbarRef.current
+
+            const toolbarBoundary = toolbarNode.getBoundingClientRect()
+            console.log('node')
             console.log(toolbarRef.current)
-            console.log(props.editorRef.current)
+            console.log(props.editorRootRef.current)
 
-            // const toolbarNode = ReactDOM.findDOMNode(this);
-            // const toolbarBoundary = toolbarNode.getBoundingClientRect();
+            const parent = props.editorRootRef.current
+            const parentBoundary = parent.getBoundingClientRect();
 
-            // const parent = ReactDOM.findDOMNode(this.props.editorNode);
-            // const parentBoundary = parent.getBoundingClientRect();
+            console.log('Boundary')
+            console.log(toolbarBoundary)
+            console.log(parentBoundary)
+
+            /*
+                * Main logic for setting the toolbar position.
+            */
+            toolbarNode.style.top =
+                `${(selectionBoundary.top - parentBoundary.top - toolbarBoundary.height - 5)}px`;
+            toolbarNode.style.width = `${toolbarBoundary.width}px`;
+
+            // The left side of the tooltip should be:
+            // center of selection relative to parent - half width of toolbar
+            const selectionCenter = (selectionBoundary.left + (selectionBoundary.width / 2)) - parentBoundary.left;
+            let left = selectionCenter - (toolbarBoundary.width / 2);
+            const screenLeft = parentBoundary.left + left;
+            if (screenLeft < 0) {
+                // If the toolbar would be off-screen
+                // move it as far left as it can without going off-screen
+                left = -parentBoundary.left;
+            }
+            toolbarNode.style.left = `${left}px`;
 
         }
     });
